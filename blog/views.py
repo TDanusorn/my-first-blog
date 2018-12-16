@@ -54,8 +54,18 @@ auth = firebase.auth()
 def Main(request):
     return render(request, 'blog/Main.html')
 def Cost(request):
-#     EC1 = database.child('Suggest').child('Asparagus').child('EC').get().val()
-    return render(request, 'blog/Cost.html')
+      Unit_Electric = database.child('Field').child('Field 1').child('Unit Electric').get().val()
+      Fertilizer = database.child('Field').child('Field 1').child('Fertilizer').get().val()
+      Unit_Water = database.child('Field').child('Field 1').child('Unit Water').get().val()
+      Cost_Electric = round(Unit_Electric*4,3)
+      Cost_Fertilizer = round(Fertilizer*200,3)
+      Cost_Water =round(Unit_Water*15.0,3)
+      Cost_Total=round(float(Cost_Electric)+float(Cost_Fertilizer)+float(Cost_Water),3)
+      form={
+            'Cost_Electric':Cost_Electric, 'Cost_Fertilizer':Cost_Fertilizer, 'Cost_Water':Cost_Water,
+            'Unit_Electric':Unit_Electric, 'Fertilizer':Fertilizer, 'Unit_Water':Unit_Water, 'Cost_Total':Cost_Total
+      }
+      return render(request, 'blog/Cost.html',form)
 def How_to_care(request):
     EC1 = database.child('Suggest').child('Asparagus').child('EC').get().val()
     Temp1 = database.child('Suggest').child('Asparagus').child('Temp').get().val()
