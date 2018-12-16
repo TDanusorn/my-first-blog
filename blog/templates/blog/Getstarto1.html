@@ -61,19 +61,14 @@
       <div class="container">
         <div class="row ">
           <div class="col">
-            {% if veget > 0 %}
-            <button>
-              <p align = 'left'>1</p>
-              <a href="{% url 'Control01' %}" class="button1 "> 
-              </a>
-            </button>
+             {% if veget > 0 %}
+              <a href="{% url 'Control01' %}" class="button1 "> </a>
             {% else %}
 
   <!-- Button trigger modal -->
-            <button type="button" data-toggle="modal" data-target="#exampleModalCenter">
-                <p align = 'left'>1</p>
-                <a class="button1"></a>
-              </button>
+            {% comment %} <button type="button" data-toggle="modal" data-target="#exampleModalCenter"> {% endcomment %}
+                <a class="button1" data-toggle="modal" data-target="#exampleModalCenter" ></a>
+              {% comment %} </button> {% endcomment %}
               
               <!-- Modal -->
               <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -111,17 +106,10 @@
             {% endif %}
           </div>
           <div class="col-4">
-               {% if veget2 > 0 %}
-              <button>
-                <p align = 'left'>2</p>
-                <a href="{% url 'Control02' %}" class="button1 "> 
-                </a>
-              </button>
+              {% if veget2 > 0 %}
+                <a href="{% url 'Control02' %}" class="button2 "> </a>
               {% else %}
-              <button type="button" data-toggle="modal" data-target="#exampleModalCenter">
-                <p align = 'left'>2</p>
-                <a class="button1"></a>
-              </button>
+              <a class="button2" data-toggle="modal" data-target="#exampleModalCenter" ></a>
               
               <!-- Modal -->
               <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

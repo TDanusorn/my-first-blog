@@ -2,31 +2,29 @@
 .button1 {
     
     background-color: #ffffff; /* White */
-    border: outset;
-    color: black;
+    border-style:outset;
+    color: green;
+    border-radius: 20px;
+    border-width: 20px;
     padding: 180px 180px;
-    margin-top: 5px;
-    text-align: center;
-    text-decoration: none;
     display: inline-block;
-    background-image: url('83408-200.png');
+    background-image: url('num1.png');
     background-position-y: 675px;
     background-size: cover;
     
     
 }
 .button2 {
-  background-color: #FFFFFF ; /* White */
-  border: outset;
-  color: black;
-  margin-top: 5px;
-  padding: 180px 180px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  background-image: url('83408-200.png');
-  background-position-y: 675px;
-  background-size: cover;
+    background-color: #ffffff; /* White */
+    border-style:outset;
+    color: green;
+    border-radius: 20px;
+    border-width: 20px;
+    padding: 180px 180px;
+    display: inline-block;
+    background-image: url('num2.png');
+    background-position-y: 675px;
+    background-size: cover;
   
 }
 .button3 {
