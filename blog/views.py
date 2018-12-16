@@ -196,7 +196,7 @@ def Setting01(request):
                 database.child("Input Field").child("Field 1").child("Humidity").set(posts.Water)
                 database.child("Input Field").child("Field 1").child("Auto").set(0)
                 form = {
-                      'form':form, 'veget2':veget2, 'Mode1':Mode3
+                      'form':form, 'veget2':veget2, 'Mode1':Mode3, 'veget':veget
                 }
                 return render(request, 'blog/Control01.html',form)
       #     else:
@@ -209,11 +209,11 @@ def Setting01(request):
       else:
           form=dtForm()
           form = {
-                      'form':form, 'veget2':veget2, 'Mode1':Mode3
+                      'form':form, 'veget2':veget2, 'Mode1':Mode3, 'veget':veget
                 }
           return render(request, 'blog/Setting01.html',form)
       form = {
-                  'veget2':veget2
+                  'veget2':veget2, 'veget':veget
                 }
       return render(request, 'blog/Setting01.html',form)
 
