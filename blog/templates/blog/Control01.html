@@ -66,6 +66,26 @@
             </div>
             </div>
         </div>
+        <div class="modal fade" id="example" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="example">REMOVE FARM</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <h5> Remove Farm1 </h5>      
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                {% comment %} <button type="submit" class="btn btn-primary"><a href="{% url 'Getstarto' %}">OK</a></button> {% endcomment %}
+                <a href="{% url 'Remove' %}" class="btn btn-primary">OK</a>
+                </div>
+            </div>
+            </div>
+        </div>
 
 <body class="masthead ">
   <!-- Navigation -->
@@ -208,8 +228,8 @@
                     <a href="{% url 'Setting01' %}"><font color="#000000">setting</font></a></button></div> {% endcomment %}
                     {% comment %} </div> {% endcomment %}
                   <div class="col-6 ">
-                    <button type="button" class="btn btn-danger">
-                      <a href="{% url 'Remove' %}">Remove farm</a></button>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#example">
+                      Remove farm</button>
                   </div>
                   </div>
           </div>

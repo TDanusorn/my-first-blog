@@ -128,8 +128,9 @@ def Control02(request):
 # def Getstarto(request):
 #       Power1 = database.child('Input Field').child('Field 1').child('Power').get().val()
 #       return render(request, 'blog/Getstarto.html',{'Power':Power1})
-def Power00(request):
+def Getstarto(request):
       veget=int(database.child("Input Field").child("Field 1").child("Veget").get().val())
+      veget2=int(database.child("Input Field").child("Field 2").child("Veget").get().val())
       if veget == 0 :
             if request.method=="POST":
                   form=vegetableform(request.POST)
@@ -144,18 +145,29 @@ def Power00(request):
                               v=3
                         database.child("Input Field").child("Field 1").child("Veget").set(v)
                         print('valid')
-                        return render(request, 'blog/Control01.html',{'form':form})
+                        form={
+                              'veget':veget, 'veget2':veget2
+                        }
+                        return render(request, 'blog/Control01.html',form)
                   # else:
                   #       print('not valid')
                   #       form=vegetableform()
                   #       return render(request, 'blog/power00.html',{'form':form})
       elif veget >=1 :
+            form={
+                  'veget':veget, 'veget2':veget2
+            }
             print("PP")
             # form=vegetableform()
       # Power1 = database.child('Input Field').child('Field 1').child('Power').get().val()
-            return render(request, 'blog/power10.html')
+            return render(request, 'blog/Getstarto.html',form)
+
+      form={
+                  'veget':veget, 'veget2':veget2
+            }
       print("aaaa")
-      return render(request, 'blog/power00.html')
+      return render(request, 'blog/Getstarto.html',form)
+      
 def Setting01(request):
       Mode2=int(database.child("Input Field").child("Field 1").child("Auto").get().val())
       MODE=["Manual", "Auto"]
@@ -216,6 +228,6 @@ def Setting02(request):
 def Remove(request):
       print('s')
       database.child("Input Field").child("Field 1").child("Veget").set(0)
-      return render(request, 'blog/Main.html')
+      return render(request,'blog/Getstarto1.html')
 
 # data = database.child('Asparagus').child('EC').get().val(
